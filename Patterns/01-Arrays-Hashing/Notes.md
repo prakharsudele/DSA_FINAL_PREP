@@ -458,8 +458,144 @@ prefix[L] instead of prefix[L-1]
 
 ✔ Prefix stores sum from index 0.
 
+---
+
+# HashMap Fundamentals
+
+---
+
+# 1. Motivation
+
+Many array problems ask:
+
+"Have I seen something before?"
+
+Without remembering previous elements, we repeatedly search the array, leading to O(n²) solutions.
+
+A HashMap lets us remember useful information while traversing the array.
+
+---
+
+# 2. Core Idea
+
+Instead of searching the remaining array,
+
+store useful information as you traverse.
+
+Future elements can immediately check whether the required information already exists.
+
+This often reduces
+
+O(n²)
+
+↓
+
+O(n)
+
+---
+
+# 3. What is a HashMap?
+
+A HashMap stores
+
+Key → Value
+
+Example
+
+```
+2 → index 0
+
+7 → index 1
+
+11 → index 2
+```
+
+Average Time Complexity
+
+Insert
+
+O(1)
+
+Search
+
+O(1)
+
+Delete
+
+O(1)
+
+Worst case can degrade to O(n), but Java's implementation is highly optimized, so we treat average operations as O(1) in interviews.
+
+---
+
+# 4. Common Uses
+
+Store
+
+- Frequency
+- Index
+- Previous occurrence
+- Prefix Sum
+- Character count
+
+---
+
+# 5. Pattern Recognition
+
+Think about HashMap when
+
+✅ Need fast lookup
+
+✅ Need frequency count
+
+✅ Need duplicate detection
+
+✅ Need to remember previous values
+
+✅ Need O(1) searching
+
+---
+
+# 6. Java Template
+
+```java
+HashMap<Integer,Integer> map = new HashMap<>();
+
+map.put(key,value);
+
+map.get(key);
+
+map.containsKey(key);
+
+map.remove(key);
+```
+
+---
+
+# 7. Common Mistakes
+
+❌ Using HashMap when an array is sufficient
+
+❌ Forgetting duplicate keys overwrite previous values
+
+❌ Calling get() without checking containsKey()
+
+---
+
+# 8. Revision Summary
+
+✔ HashMap remembers information while traversing.
+
+✔ Most HashMap problems become one-pass solutions.
+
+✔ Ask yourself:
+
+"What information should I store so future elements can benefit?"
+
 ✔ Range Sum = prefix[R] - prefix[L-1]
 
 ✔ Construction O(n)
+
+---
 
 ✔ Query O(1)
