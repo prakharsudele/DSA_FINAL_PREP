@@ -188,3 +188,278 @@ O(1)
 ✔ Start with brute force, then optimize.
 
 ✔ Practice recognizing patterns rather than memorizing solutions.
+
+---
+
+# Prefix Sum
+
+---
+
+# 1. Motivation
+
+Consider the array:
+
+```
+Index : 0 1 2 3 4 5 6
+
+Value : 2 5 3 8 6 1 4
+```
+
+Suppose someone asks:
+
+Sum from index 2 to 5
+
+Answer:
+
+3 + 8 + 6 + 1 = 18
+
+Easy.
+
+Now suppose there are **100,000 such queries**.
+
+If we calculate every query by traversing the range, each query takes O(n).
+
+Total Complexity:
+
+O(n × q)
+
+This is too slow.
+
+We need a way to answer each query instantly.
+
+---
+
+# 2. The Main Idea
+
+Instead of calculating every range repeatedly,
+
+calculate cumulative sums once.
+
+Example:
+
+Original Array
+
+```
+2 5 3 8 6 1 4
+```
+
+Prefix Sum Array
+
+```
+2 7 10 18 24 25 29
+```
+
+Each position stores the sum from index 0 to i.
+
+Example:
+
+prefix[3]
+
+=
+
+2 + 5 + 3 + 8
+
+=
+
+18
+
+---
+
+# 3. Building Prefix Sum
+
+Formula
+
+prefix[0] = arr[0]
+
+For every remaining element
+
+prefix[i] = prefix[i-1] + arr[i]
+
+Example
+
+```
+arr
+
+2 5 3 8 6 1 4
+
+prefix
+
+2
+2+5=7
+7+3=10
+10+8=18
+18+6=24
+24+1=25
+25+4=29
+```
+
+Time Complexity
+
+O(n)
+
+Space Complexity
+
+O(n)
+
+---
+
+# 4. Finding Range Sum
+
+Suppose we need
+
+Sum(2...5)
+
+Instead of
+
+3+8+6+1
+
+Observe
+
+prefix[5]
+
+contains
+
+2+5+3+8+6+1
+
+Remove
+
+prefix[1]
+
+which is
+
+2+5
+
+Remaining
+
+3+8+6+1
+
+Formula
+
+RangeSum(L,R)
+
+If L == 0
+
+answer = prefix[R]
+
+Else
+
+answer = prefix[R] - prefix[L-1]
+
+This gives O(1) query time.
+
+---
+
+# 5. Dry Run
+
+Array
+
+```
+2 5 3 8 6 1 4
+```
+
+Prefix
+
+```
+2 7 10 18 24 25 29
+```
+
+Query
+
+L = 2
+
+R = 5
+
+Answer
+
+prefix[5] - prefix[1]
+
+25 - 7
+
+18
+
+Correct.
+
+---
+
+# 6. Java Template
+
+```java
+int[] prefix = new int[arr.length];
+
+prefix[0] = arr[0];
+
+for(int i = 1; i < arr.length; i++){
+    prefix[i] = prefix[i-1] + arr[i];
+}
+```
+
+Range Sum
+
+```java
+int rangeSum(int L, int R){
+    if(L == 0)
+        return prefix[R];
+
+    return prefix[R] - prefix[L-1];
+}
+```
+
+---
+
+# 7. Complexity
+
+Building Prefix
+
+O(n)
+
+Each Query
+
+O(1)
+
+Extra Space
+
+O(n)
+
+---
+
+# 8. Pattern Recognition
+
+Think about Prefix Sum whenever you see
+
+✅ Multiple range sum queries
+
+✅ Contiguous subarray
+
+✅ Running cumulative values
+
+✅ Need fast repeated calculations
+
+---
+
+# 9. Common Mistakes
+
+❌ Forgetting L == 0
+
+❌ Wrong subtraction
+
+prefix[L] instead of prefix[L-1]
+
+❌ Building prefix incorrectly
+
+❌ Confusing prefix sum with sliding window
+
+---
+
+# 10. Revision Summary
+
+✔ Build once.
+
+✔ Query many times.
+
+✔ Prefix stores sum from index 0.
+
+✔ Range Sum = prefix[R] - prefix[L-1]
+
+✔ Construction O(n)
+
+✔ Query O(1)
