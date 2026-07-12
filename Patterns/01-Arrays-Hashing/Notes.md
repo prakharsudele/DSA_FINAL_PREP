@@ -596,6 +596,107 @@ map.remove(key);
 
 ✔ Construction O(n)
 
+✔ Query O(1)
+
 ---
 
-✔ Query O(1)
+# Frequency Arrays
+
+---
+
+# 1. Motivation
+
+Sometimes the possible keys are very small and fixed.
+
+Example:
+
+- Lowercase letters
+- Uppercase letters
+- Digits
+- Days of the week
+
+Using a HashMap is unnecessary.
+
+A simple array is faster and easier.
+
+---
+
+# 2. Core Idea
+
+Use an array where the index represents the key.
+
+Example:
+
+```
+freq[0] → 'a'
+
+freq[1] → 'b'
+
+...
+
+freq[25] → 'z'
+```
+
+---
+
+# 3. Java Template
+
+```java
+int[] freq = new int[26];
+
+for(char ch : s.toCharArray()){
+    freq[ch - 'a']++;
+}
+```
+
+---
+
+# 4. Complexity
+
+Time
+
+O(n)
+
+Space
+
+O(1)
+
+Although the array has size 26, it is constant.
+
+---
+
+# 5. Pattern Recognition
+
+Use Frequency Arrays when
+
+✅ Character set is fixed
+
+✅ Keys are small integers
+
+✅ ASCII values can map directly to indices
+
+---
+
+# 6. Common Mistakes
+
+❌ Forgetting
+
+```
+ch - 'a'
+```
+
+❌ Assuming uppercase works with size 26
+
+❌ Using HashMap when an array is sufficient
+
+---
+
+# 7. Revision Summary
+
+✔ Fixed key range → Array
+
+✔ Unknown or large key range → HashMap
+
+✔ Arrays are faster than HashMaps when applicable.
+
+---
