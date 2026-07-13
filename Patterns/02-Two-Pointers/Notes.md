@@ -139,3 +139,54 @@ Think of Two Pointers when
 ✔ O(n)
 
 ---
+
+# Two Pointer Patterns
+
+There are two major categories.
+
+---
+
+## 1. Opposite Direction
+
+Used when
+
+- Array is sorted
+- Need a pair
+- Reverse
+- Palindrome
+
+Example
+
+Left →
+
+← Right
+
+---
+
+## 2. Same Direction
+
+One pointer explores.
+
+One pointer builds or tracks.
+
+Usually
+
+Slow Pointer
+
+Fast Pointer
+
+The fast pointer scans.
+
+The slow pointer stores the answer.
+
+---
+
+## Interview Question
+
+Before writing code ask
+
+Which pointer is exploring?
+
+Which pointer is maintaining the answer?
+
+---
