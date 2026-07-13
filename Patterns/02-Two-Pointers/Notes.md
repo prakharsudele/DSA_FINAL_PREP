@@ -190,3 +190,38 @@ Which pointer is exploring?
 Which pointer is maintaining the answer?
 
 ---
+
+# Explorer-Builder Pattern
+
+Two pointers have different responsibilities.
+
+Explorer
+
+- Visits every element.
+- Decides whether the current element is useful.
+
+Builder
+
+- Maintains the answer.
+- Places useful elements in the correct position.
+
+---
+
+Invariant
+
+Everything before the builder pointer is already correct.
+
+Everything after it is either unexplored or doesn't matter yet.
+
+---
+
+Recognition
+
+Think of this pattern when
+
+- Removing elements
+- Compressing arrays
+- Stable partitioning
+- Moving selected elements
+
+---
