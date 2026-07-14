@@ -107,3 +107,47 @@ Sliding Window updates previous work.
 Never recompute.
 
 ---
+
+# Pattern Philosophy
+
+Every optimization removes repeated work.
+
+Traversal
+
+Removes repeated visits.
+
+---
+
+Prefix Sum
+
+Removes repeated cumulative calculations.
+
+---
+
+HashMap
+
+Removes repeated searching.
+
+---
+
+Two Pointers
+
+Removes repeated pair comparisons.
+
+---
+
+Sliding Window
+
+Removes repeated window calculations.
+
+---
+
+Interview Question
+
+Before writing code ask:
+
+"What work am I doing repeatedly?"
+
+The answer often reveals the correct pattern.
+
+---
