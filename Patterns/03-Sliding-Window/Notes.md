@@ -151,3 +151,30 @@ Before writing code ask:
 The answer often reveals the correct pattern.
 
 ---
+
+# Problem Decomposition
+
+Many interview problems become easier after splitting them into independent parts.
+
+Instead of solving everything together, identify:
+
+- Fixed contribution
+- Variable contribution
+
+Optimize only the variable contribution.
+
+Examples
+
+LC 1052
+
+Always satisfied
+
++
+
+Extra satisfied customers
+
+Final Answer
+
+Base + Maximum Extra
+
+---
