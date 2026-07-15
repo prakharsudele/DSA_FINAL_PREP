@@ -316,3 +316,27 @@ Repeat.
 
 
 ---
+
+# Variable Sliding Window
+
+## Longest Problems
+
+Expand while valid.
+
+Shrink only when invalid.
+
+---
+
+## Shortest Problems
+
+Expand until valid.
+
+While valid:
+
+    Update answer.
+
+    Shrink again.
+
+Repeat until invalid.
+
+----
