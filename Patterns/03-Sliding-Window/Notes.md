@@ -299,3 +299,20 @@ Shrink until valid.
 Repeat.
 
 ---
+
+# Variable Sliding Window Rules
+
+1. Expand first.
+
+2. Update state.
+
+3. Check validity.
+
+4. If invalid,
+
+    shrink only until valid again.
+
+5. Update answer only when the window is valid.
+
+
+---
