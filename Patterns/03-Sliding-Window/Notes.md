@@ -178,3 +178,124 @@ Final Answer
 Base + Maximum Extra
 
 ---
+
+# Variable Sliding Window
+
+---
+
+# 1. Motivation
+
+Some problems do not have a fixed window size.
+
+Instead,
+
+the window must satisfy a condition.
+
+Examples
+
+- No duplicates
+- At most K distinct
+- Sum >= target
+
+The window expands while valid.
+
+It shrinks until valid again.
+
+---
+
+# 2. Core Idea
+
+Expand
+
+↓
+
+Window becomes invalid
+
+↓
+
+Shrink
+
+↓
+
+Window becomes valid
+
+↓
+
+Expand again
+
+---
+
+# 3. General Template
+
+```java
+int left = 0;
+
+for(int right = 0; right < n; right++){
+
+    // Include right element
+
+    while(window is invalid){
+
+        // Remove left element
+
+        left++;
+    }
+
+    // Window is valid here
+
+    // Update answer
+}
+```
+
+---
+
+# 4. Complexity
+
+Each element
+
+enters once.
+
+Leaves once.
+
+Time
+
+O(n)
+
+Space
+
+Depends on data structure.
+
+---
+
+# 5. Pattern Recognition
+
+Use Variable Sliding Window when
+
+- Longest
+- Shortest
+- At most
+- At least
+- Exactly K
+- No duplicates
+
+---
+
+# 6. Common Mistakes
+
+❌ Shrinking too early
+
+❌ Forgetting to update answer
+
+❌ Wrong validity condition
+
+---
+
+# 7. Revision Summary
+
+Expand while valid.
+
+Shrink until valid.
+
+Repeat.
+
+---
