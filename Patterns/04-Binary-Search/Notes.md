@@ -32,5 +32,3 @@ Question
 └── Can I eliminate half the search space every step?
         ↓
      Binary Search
-
-     ---
