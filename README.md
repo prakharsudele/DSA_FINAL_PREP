@@ -4,9 +4,9 @@ My structured Data Structures & Algorithms preparation repository.
 
 ## Roadmap
 
-- [ ] Arrays & Hashing
-- [ ] Two Pointers
-- [ ] Sliding Window
+- [ DONE ] Arrays & Hashing
+- [ DONE ] Two Pointers
+- [ DONE ] Sliding Window
 - [ ] Binary Search
 - [ ] Stack
 - [ ] Queue
