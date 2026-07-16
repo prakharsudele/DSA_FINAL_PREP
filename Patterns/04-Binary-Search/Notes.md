@@ -61,3 +61,21 @@ Maximum Valid Answer
 → Search Larger
 
 ---
+
+# Binary Search on Answer
+
+Unlike classical Binary Search, `mid` is not an index.
+
+`mid` represents a candidate answer.
+
+Algorithm
+
+1. Choose a candidate answer (`mid`).
+2. Check if it is valid.
+3. If valid:
+   - Store it as the current best.
+   - Search for a better answer.
+4. If invalid:
+   - Eliminate impossible answers.
+  
+   ---
