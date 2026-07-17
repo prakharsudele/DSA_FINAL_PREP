@@ -4,10 +4,10 @@ My structured Data Structures & Algorithms preparation repository.
 
 ## Roadmap
 
-- [ DONE ] Arrays & Hashing
-- [ DONE ] Two Pointers
-- [ DONE ] Sliding Window
-- [ ] Binary Search
+- [✅] Arrays & Hashing
+- [✅] Two Pointers
+- [✅] Sliding Window
+- [✅] Binary Search
 - [ ] Stack
 - [ ] Queue
 - [ ] Linked List
