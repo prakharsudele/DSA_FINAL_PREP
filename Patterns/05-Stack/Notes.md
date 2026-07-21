@@ -124,3 +124,27 @@ Top becomes the answer.
 Insert the current element.
 
 ---
+
+### LC 901 - Online Stock Span
+
+**State:**
+Stack stores `(price, span)`.
+
+**Invariant:**
+Prices in the stack remain strictly decreasing from bottom to top.
+
+Each `(price, span)` represents a compressed block of consecutive days
+whose prices are less than or equal to that price.
+
+**When current price >= stack top:**
+The current price can absorb the entire span represented by the top.
+
+So:
+
+currentSpan += poppedSpan
+
+**Complexity:**
+Time: O(n) amortized over n calls
+Space: O(n)
+
+---
