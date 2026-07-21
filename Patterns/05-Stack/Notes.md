@@ -73,3 +73,54 @@ Top becomes answer.
 Push current.
 
 ---
+
+# Monotonic Stack
+
+## Recognition
+
+Use when asking:
+
+- Next Greater
+- Previous Greater
+- Next Smaller
+- Previous Smaller
+
+---
+
+## State
+
+A stack containing useful candidates that may answer future queries.
+
+The stack stores exactly the information needed to compute the answer.
+
+Examples
+
+LC 496
+
+(value)
+
+LC 739
+
+(value, index)
+
+---
+
+## Invariant
+
+The stack is maintained in monotonic order.
+
+Every element removed from the stack can never become an answer again.
+
+---
+
+## Generic Algorithm
+
+Traverse in the direction opposite to where the answer lies.
+
+Remove useless candidates.
+
+Top becomes the answer.
+
+Insert the current element.
+
+---
