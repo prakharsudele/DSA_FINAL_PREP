@@ -92,3 +92,45 @@ Execution resumes after the recursive call returns.
 - Forgetting to return recursive result
 
   ---
+
+  ## Designing Recursive Relations
+
+Every recursion problem has three questions.
+
+1.
+
+What is the smaller problem?
+
+2.
+
+What should the recursive call return?
+
+3.
+
+How do I use that returned answer?
+
+Examples
+
+Factorial
+
+↓
+
+Multiply
+
+Maximum
+
+↓
+
+Take maximum
+
+Sorted Array
+
+↓
+
+Logical AND
+
+Trees
+
+↓
+
+Combine left and right subtree answers
