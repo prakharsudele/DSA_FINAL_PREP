@@ -98,3 +98,39 @@ Space: O(H)
 (H = height of tree)
 
 ---
+
+## Designing Return Values
+
+The recursive function does NOT always return the final answer.
+
+It returns the information the parent needs.
+
+Examples
+
+Maximum Depth
+
+Return → Height
+
+Same Tree
+
+Return → Boolean
+
+Balanced Tree
+
+Return → Height
+
+Special Value
+
+Sometimes a return value is used as a signal.
+
+Example
+
+-1
+
+means
+
+"This subtree is already invalid."
+
+The parent should immediately propagate this signal upward instead of continuing calculations.
+
+---
