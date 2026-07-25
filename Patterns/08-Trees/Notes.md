@@ -134,3 +134,27 @@ means
 The parent should immediately propagate this signal upward instead of continuing calculations.
 
 ---
+
+## Tree Pattern 4 - Height + Global Answer
+
+Recognition
+
+The parent only needs one value.
+
+But every node contributes to the final answer.
+
+Examples
+
+- Diameter of Binary Tree
+- Maximum Path Sum
+- Longest Univalue Path
+
+Framework
+
+left = dfs(node.left)
+
+right = dfs(node.right)
+
+Update global answer
+
+Return information parent needs
