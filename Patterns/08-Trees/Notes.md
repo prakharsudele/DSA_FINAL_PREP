@@ -158,3 +158,50 @@ right = dfs(node.right)
 Update global answer
 
 Return information parent needs
+
+---
+
+# Tree Traversals
+
+Every traversal is DFS.
+
+The only difference is when the current node is processed.
+
+## Preorder
+
+Current → Left → Right
+
+Use when the current node must be processed before children.
+
+---
+
+## Inorder
+
+Left → Current → Right
+
+Use mainly for Binary Search Trees.
+
+---
+
+## Postorder
+
+Left → Right → Current
+
+Use when the parent depends on children's answers.
+
+Examples
+
+- Height
+- Diameter
+- Balanced Tree
+- Delete Tree
+
+---
+
+Question to ask
+
+"When should I process the current node?"
+
+The answer determines the traversal.
+
+---
