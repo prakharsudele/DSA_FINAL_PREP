@@ -205,3 +205,21 @@ Question to ask
 The answer determines the traversal.
 
 ---
+
+## BFS Level Order Invariant
+
+At the beginning of each iteration of the outer while loop,
+
+the queue contains exactly one complete level.
+
+Save
+
+int size = q.size();
+
+before processing the level.
+
+Process exactly `size` nodes.
+
+Children added during processing belong to the next level and should not be processed immediately.
+
+---
