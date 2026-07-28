@@ -8,8 +8,8 @@ My structured Data Structures & Algorithms preparation repository.
 - [✅] Two Pointers
 - [✅] Sliding Window
 - [✅] Binary Search
-- [ ] Stack
-- [ ] Queue
+- [✅] Stack
+- [✅] Queue
 - [ ] Linked List
 - [ ] Trees
 - [ ] Heap
