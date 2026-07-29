@@ -223,3 +223,42 @@ Process exactly `size` nodes.
 Children added during processing belong to the next level and should not be processed immediately.
 
 ---
+
+# Trees Roadmap
+
+## DFS Basics
+- [x] LC104
+- [x] LC100
+- [x] LC226
+- [x] LC110
+- [x] LC543
+- [x] LC112
+- [x] LC257
+- [x] LC124
+
+## Traversals
+- [x] LC144
+- [x] LC94
+- [x] LC145
+
+## BFS
+- [x] LC102
+- [x] LC107
+- [x] LC199
+- [x] LC637
+- [x] LC103
+
+## Advanced DFS
+- [ ] LC101
+- [ ] LC113
+- [ ] LC129
+- [ ] LC236
+
+## Binary Search Trees
+- [ ] LC700
+- [ ] LC701
+- [ ] LC530
+- [ ] LC98
+- [ ] LC230
+- [ ] LC235
+- [ ] LC450
