@@ -485,16 +485,16 @@ Average O(logN).
 - [x] LC103
 
 ## Advanced DFS
-- [ ] LC101
-- [ ] LC113
-- [ ] LC129
-- [ ] LC236
+- [x] LC101
+- [x] LC113
+- [x] LC129
+- [x] LC236
 
 ## Binary Search Trees
-- [ ] LC700
-- [ ] LC701
-- [ ] LC530
-- [ ] LC98
-- [ ] LC230
-- [ ] LC235
-- [ ] LC450
+- [x] LC700
+- [x] LC701
+- [x] LC530
+- [x] LC98
+- [x] LC230
+- [x] LC235
+- [x] LC450
