@@ -224,6 +224,242 @@ Children added during processing belong to the next level and should not be proc
 
 ---
 
+# Binary Search Tree (BST)
+
+## Definition
+
+A Binary Search Tree is a Binary Tree where
+
+Left Subtree < Current Node < Right Subtree
+
+Every subtree also follows the BST property.
+
+---
+
+## Advantages
+
+Search : O(log N) Average
+
+Insert : O(log N) Average
+
+Delete : O(log N) Average
+
+Worst Case (Skew Tree)
+
+O(N)
+
+---
+
+## Recognition
+
+Whenever a problem mentions
+
+- Sorted order
+- Search efficiently
+- Kth smallest/largest
+- Successor / Predecessor
+
+Think about BST properties.
+
+---
+
+## Inorder Traversal of BST
+
+Inorder traversal of a BST always produces nodes in sorted order.
+
+Left
+
+↓
+
+Root
+
+↓
+
+Right
+
+Applications
+
+- Validate BST
+- Kth Smallest
+- Minimum Difference
+- BST Iterator
+
+  ---
+
+  ## Pattern 1 - Eliminate Half
+
+Question
+
+Current value greater than target?
+
+↓
+
+Go Left
+
+Current value smaller than target?
+
+↓
+
+Go Right
+
+Never search both sides.
+
+Time
+
+Average O(logN)
+
+Worst O(N)
+
+---
+
+## Pattern 2 - Modify and Return Subtree
+
+Recursive Question
+
+Modify my subtree and return its new root.
+
+Base Case
+
+Reached null
+
+↓
+
+Create new node.
+
+Recursive Step
+
+If value < root.val
+
+↓
+
+root.left = dfs(root.left)
+
+Else
+
+↓
+
+root.right = dfs(root.right)
+
+Return
+
+root
+
+Used In
+
+- Insert into BST
+- Delete Node
+
+---
+
+## Pattern 3 - Traversal State
+
+Observation
+
+BST inorder traversal is sorted.
+
+Maintain
+
+- Previous Node
+- Count
+- Answer
+
+Examples
+
+- Kth Smallest
+- Recover BST
+- Minimum Difference
+
+  ---
+
+  ## Pattern 4 - Pass Constraints Downward
+
+Every node inherits constraints from its ancestors.
+
+State
+
+Current Node
+
+Minimum Allowed
+
+Maximum Allowed
+
+Rule
+
+min < node.val < max
+
+Left
+
+(min, node.val)
+
+Right
+
+(node.val, max)
+
+Used In
+
+Validate BST
+
+---
+
+## Delete Node Cases
+
+Case 1
+
+Leaf Node
+
+↓
+
+Delete directly.
+
+---
+
+Case 2
+
+One Child
+
+↓
+
+Return child.
+
+---
+
+Case 3
+
+Two Children
+
+↓
+
+Find inorder successor
+(Smallest node in right subtree)
+
+Copy successor value.
+
+Delete successor recursively.
+
+---
+
+## Binary Tree vs BST
+
+Binary Tree
+
+No ordering property.
+
+Most problems require visiting many nodes.
+
+Usually O(N).
+
+---
+
+Binary Search Tree
+
+Ordered.
+
+Often only one path is explored.
+
+Average O(logN).
+
+---
+
 # Trees Roadmap
 
 ## DFS Basics
