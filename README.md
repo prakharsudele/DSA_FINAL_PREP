@@ -11,7 +11,7 @@ My structured Data Structures & Algorithms preparation repository.
 - [✅] Stack
 - [✅] Queue
 - [ ] Linked List
-- [ ] Trees
+- [✅] Trees
 - [ ] Heap
 - [ ] Backtracking
 - [ ] Graph
