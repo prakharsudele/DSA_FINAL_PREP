@@ -105,3 +105,34 @@ Think Heap when
 - Largest / Smallest repeatedly
 - Priority Scheduling
 - Streaming Data
+
+---
+
+## Pattern 1 - Repeated Max/Min Extraction
+
+Recognition
+
+Repeatedly remove the largest/smallest element.
+
+Examples
+
+- Last Stone Weight
+
+Approach
+
+1. Build Max Heap
+2. Remove two largest elements
+3. Process them
+4. Insert the new value if required
+
+Heap Invariant
+
+The root always stores the largest remaining element.
+
+Complexity
+
+Time : O(N log N)
+
+Space : O(N)
+
+---
