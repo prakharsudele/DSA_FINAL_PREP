@@ -136,3 +136,38 @@ Time : O(N log N)
 Space : O(N)
 
 ---
+
+## Heap Pattern 2 - Top K
+
+Recognition
+
+Need only K best elements.
+
+Examples
+
+- Kth Largest
+- Top K Frequent
+- K Closest Points
+
+Framework
+
+1. Compute the metric (if needed)
+   - Frequency
+   - Distance
+   - Score
+
+2. Maintain a Min Heap of size K.
+
+3. If heap size exceeds K
+
+↓
+
+Remove the root.
+
+Heap Invariant
+
+Heap always stores the K best candidates.
+
+The root is the worst among those K candidates.
+
+---
