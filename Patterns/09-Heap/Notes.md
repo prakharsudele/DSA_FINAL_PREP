@@ -171,3 +171,109 @@ Heap always stores the K best candidates.
 The root is the worst among those K candidates.
 
 ---
+
+# Heap Patterns
+
+## Pattern 1 - Repeated Extraction
+
+Recognition
+
+Repeatedly need the smallest/largest element.
+
+Examples
+
+- Last Stone Weight
+
+Heap
+
+Min Heap / Max Heap
+
+Invariant
+
+Root always stores the next element to process.
+
+---
+
+## Pattern 2 - Top K
+
+Recognition
+
+Need only K best elements.
+
+Examples
+
+- Kth Largest
+- Top K Frequent
+- K Closest Points
+
+Framework
+
+Compute metric if required
+
+↓
+
+Maintain heap of size K
+
+↓
+
+If size > K
+
+↓
+
+Remove root
+
+Invariant
+
+Heap always stores the K best candidates.
+
+Root is the worst among those K candidates.
+
+---
+
+## Comparator Rule
+
+Question 1
+
+What is stored?
+
+Examples
+
+Number
+
+(Number, Frequency)
+
+Point
+
+Meeting
+
+Question 2
+
+What is compared?
+
+Examples
+
+Value
+
+Frequency
+
+Distance
+
+Finish Time
+
+Question 3
+
+What should be at the root?
+
+Smallest?
+
+↓
+
+Min Heap
+
+Largest?
+
+↓
+
+Max Heap
+
+---
