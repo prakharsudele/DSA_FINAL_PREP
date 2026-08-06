@@ -277,3 +277,87 @@ Largest?
 Max Heap
 
 ---
+
+# Heap Pattern 3 - Merge K Sorted Structures
+
+Recognition
+
+Multiple sorted structures are given.
+
+Need to repeatedly choose the smallest current element.
+
+Examples
+
+- Merge K Sorted Lists
+
+Observation
+
+Only the current head of each list can become the next answer.
+
+Framework
+
+Insert one node from each list into a Min Heap.
+
+↓
+
+Remove smallest node.
+
+↓
+
+Append it to answer.
+
+↓
+
+Insert the next node from the same list.
+
+Invariant
+
+Heap always contains the smallest unprocessed node from every list.
+
+---
+
+# Heap Pattern 4 - Two Heaps
+
+Recognition
+
+Need median while numbers are continuously inserted.
+
+Examples
+
+- Find Median from Data Stream
+
+Idea
+
+Max Heap
+
+↓
+
+Stores smaller half
+
+Min Heap
+
+↓
+
+Stores larger half
+
+Invariant
+
+1. Size difference ≤ 1
+
+2. Every element in Max Heap ≤ every element in Min Heap
+
+Median
+
+Equal Size
+
+↓
+
+(max.peek + min.peek) / 2
+
+Unequal Size
+
+↓
+
+Top of larger heap
+
+---
