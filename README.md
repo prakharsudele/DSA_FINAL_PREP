@@ -12,8 +12,8 @@ My structured Data Structures & Algorithms preparation repository.
 - [✅] Queue
 - [ ] Linked List
 - [✅] Trees
-- [ ] Heap
-- [ ] Backtracking
+- [✅] Heap
+- [✅] Backtracking
 - [ ] Graph
 - [ ] Greedy
 - [ ] Dynamic Programming
