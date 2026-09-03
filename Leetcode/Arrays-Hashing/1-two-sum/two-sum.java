@@ -13,3 +13,6 @@ class Solution {
         return new int[]{-1 , -1};
     }
 }
+
+//TC -->O(N^2)
+//SC -->O(1)
