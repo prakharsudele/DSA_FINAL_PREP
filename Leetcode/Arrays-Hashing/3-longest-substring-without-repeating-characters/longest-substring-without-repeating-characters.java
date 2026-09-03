@@ -1,24 +1,21 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        int i = 0 , j = 0;
-        HashMap<Character , Integer> map = new HashMap<>();
-        int size = 0;
-        while(j < s.length()){
-            if(!map.containsKey(s.charAt(j))){
-                map.put(s.charAt(j) , j);
-                size = Math.max(size , j - i + 1);
-            }else{
-                while(s.charAt(i) != s.charAt(j)){
-                    map.remove(s.charAt(i));
-                    i++;
-                }
-                map.remove(s.charAt(i));
-                i++;
-                map.put(s.charAt(j) , j);
-            }
-            j++;
-        }
+        //BRUTE FORCE SOLUTION 
+        //star from every ith character and go until anyone start to repeat then start from i +1 create an hashmap to check repeitatiion.
+        //TC-->O(N^2)
+        //SC -->O(N)
 
-        return size;
+        HashMap<Character , Integer> map = new HashMap<>();
+        int maxLength = 0;
+        int i=0;
+        for(int j=0;j<s.length();j++){
+            if(map.containsKey(s.charAt(j))){
+                i = Math.max(i , map.get(s.charAt(j)) + 1);
+            }
+
+            map.put(s.charAt(j) , j);
+            maxLength = Math.max(maxLength , j-i+1);
+        }
+        return maxLength;
     }
 }
