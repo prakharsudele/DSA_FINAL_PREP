@@ -1,16 +1,25 @@
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
-        int j = 0 , currsum = 0 , length = Integer.MAX_VALUE;
-        for(int i = 0 ; i < nums.length ;i ++){
-            currsum+=nums[i];
-            while(currsum >= target){
-                length = Math.min(length , i-j+1);
-                currsum-=nums[j];
-                j++;
-            }    
+        //BRUTE FORCE 
+        //start from every ith index and go as far as required by cond that is to get sum greater than equal to the target.
+        //TC --> O(N^2) too slow
+        //SC --> O(1)
+
+        int i = 0 , j = 0;
+        int currsum = 0;
+        int minL = Integer.MAX_VALUE;
+        while(j < nums.length){
+            currsum+=nums[j];
+            if(currsum >= target){
+                while(currsum >= target){
+                    minL = Math.min(minL , j-i+1);
+                    currsum-=nums[i];
+                    i++;
+                }
+            }
+            j++;
         }
-        
-        if(length == Integer.MAX_VALUE) return 0;
-        else return length;
+        if(minL == Integer.MAX_VALUE) return 0;
+        else return minL;
     }
 }
