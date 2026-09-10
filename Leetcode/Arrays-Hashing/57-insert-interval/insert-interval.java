@@ -23,6 +23,9 @@ class Solution {
             ans[j++] = intervals[i++];
         }
 
-        return java.util.Arrays.copyOf(ans , j);
+        return java.util.Arrays.copyOf(ans , j); //cut answer to what's needed only as it have more space then required.
     }
 }
+
+//TC --> O(N)
+//SC --> O(N)
