@@ -24,5 +24,5 @@ class Solution {
     }
 }
 
-//TC --> O(Depth of tree)
-//SC --> O(1)
+//TC --> O(M) M : no of nodes in tree
+//SC --> O(Height of tree) recursive stack space.
