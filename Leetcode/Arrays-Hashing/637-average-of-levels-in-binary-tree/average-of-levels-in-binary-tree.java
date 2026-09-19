@@ -17,23 +17,20 @@ class Solution {
     public List<Double> averageOfLevels(TreeNode root) {
         List<Double> ans = new ArrayList<>();
         Queue<TreeNode> q = new LinkedList<>();
-        trav(ans , q , root);
-        return ans;
-    }
-
-    private void trav(List<Double> ans , Queue<TreeNode> q , TreeNode root){
-        if(root == null) return;
+        if(root == null) return ans;
         q.offer(root);
         while(!q.isEmpty()){
-            long sum = 0;
             int n = q.size();
+            double sum = 0.0;
             for(int i=0;i<n;i++){
                 TreeNode curr = q.poll();
                 sum+=curr.val;
-                if(curr.left!=null) q.offer(curr.left);
-                if(curr.right!=null)q.offer(curr.right);
+                if(i == n-1) ans.add(sum/(double)n);
+
+                if(curr.left != null) q.offer(curr.left);
+                if(curr.right != null) q.offer(curr.right);
             }
-            ans.add(((double)sum/(double)n));
         }
+        return ans;
     }
 }
