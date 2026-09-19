@@ -21,11 +21,11 @@ class Solution {
         q.offer(root);
         while(!q.isEmpty()){
             int n = q.size();
-            double sum = 0.0;
+            double sum = 0.0;//define avg sum as 0.0
             for(int i=0;i<n;i++){
                 TreeNode curr = q.poll();
-                sum+=curr.val;
-                if(i == n-1) ans.add(sum/(double)n);
+                sum+=curr.val;//add every value of level in sum.
+                if(i == n-1) ans.add(sum/(double)n);//when on last node add it's avg in our answer.
 
                 if(curr.left != null) q.offer(curr.left);
                 if(curr.right != null) q.offer(curr.right);
@@ -34,3 +34,6 @@ class Solution {
         return ans;
     }
 }
+
+//TC --> O(N)
+//SC --> O(N)
