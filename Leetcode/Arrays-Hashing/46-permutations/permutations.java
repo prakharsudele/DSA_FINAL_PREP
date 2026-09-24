@@ -13,11 +13,15 @@ class Solution {
             return;
         }else{ //run a for loop to fill all places of permutation.
             for(int i=0;i<nums.length;i++){
-                if(ds.contains(nums[i])) continue;
-                ds.add(nums[i]);
+                if(ds.contains(nums[i])) continue;//if already exist move on.
+                ds.add(nums[i]);//otherwis add it in ds.
                 perm(ans , ds , nums);
-                ds.remove(ds.size() - 1);
+                ds.remove(ds.size() - 1);//remove while coming back.
             }
         }
     }
 }
+
+
+//TC --> O(N!)
+//SC --> O(N)
