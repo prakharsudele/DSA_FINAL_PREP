@@ -1,49 +1,51 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        if(nums.length == 0) return new int[]{-1 , -1};
-        int fi = firstoccur(nums , target);
-        int ls = lastoccur(nums , target);
+        //get first occurence firsr then last occurence to get first occurece whenever found target store it as potensial answer and move right to mid - 1 for more potensial answers.
 
-        return new int[]{fi , ls};
-    }
+        //same do for right par move left pointer for more potensial answer
+        int n = nums.length;
+        int left = 0;
+        int right = n-1;
+        int[] ans = new int[2];
+        int fo = Integer.MAX_VALUE;
+        int lo = Integer.MIN_VALUE;
 
-    private int firstoccur(int[] nums, int target){
-        int i = 0 ; 
-        int j = nums.length - 1;
-        int ans = -1;
-
-        while(i <= j){
-            int mid = (i+j)/2;
+        //first occurence
+        while(left <= right){
+            int mid = left + (right - left)/2;
             if(nums[mid] == target){
-                ans = mid;
-                j = mid - 1;
-            }
-            else if(nums[mid] < target){
-                i = mid + 1;
+                fo = Math.min(fo , mid);
+                right = mid - 1;
+            }else if(nums[mid] > target){
+                right = mid - 1;
             }else{
-                j = mid - 1;
+                left = mid + 1;
             }
         }
-        return ans;
-    }
 
-    private int lastoccur(int[] nums, int target){
-        int i = 0 ; 
-        int j = nums.length - 1;
-        int ans = -1;
-
-        while(i <= j){
-            int mid = (i+j)/2;
+        left = 0;
+        right = n-1;
+        
+        //last occurence
+        while(left <= right){
+            int mid = left + (right - left)/2;
             if(nums[mid] == target){
-                ans = mid;
-                i = mid + 1;
-            }
-            else if(nums[mid] < target){
-                i = mid + 1;
+                lo = Math.max(lo , mid);
+                left = mid + 1;
+            }else if(nums[mid] > target){
+                right = mid - 1;
             }else{
-                j = mid - 1;
+                left = mid + 1;
             }
         }
-        return ans;
+
+        if(fo != Integer.MAX_VALUE || lo != Integer.MIN_VALUE){
+            ans[0] = fo;
+            ans[1] = lo;
+            return ans;
+        }
+
+        return new int[]{-1 , -1};
+        
     }
 }
