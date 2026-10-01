@@ -11,15 +11,18 @@ class Solution {
 
         Arrays.sort(projects , (a,b) -> Integer.compare(a[0] , b[0]));//sort by captial
         int i = 0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());//mapheap
         while(k --> 0){
             while(i < n && projects[i][0] <= w){
-                pq.offer(projects[i][1]);
+                pq.offer(projects[i][1]);//add profit in heap
                 i++;
             }
-            if(pq.isEmpty()) break;
-            w += pq.poll();
+            if(pq.isEmpty()) break;//no project can be started break off
+            w += pq.poll();//add profit in wealth.
         }
         return w;
     }
 }
+
+//TC --> O(NlogN)
+//SC --> O(N)
