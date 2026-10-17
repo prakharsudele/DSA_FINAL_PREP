@@ -4,15 +4,32 @@ class Solution {
         //we can start from every ith index and search in array to find if ith + jth will add up to target or not but it will take -
         //O(N^2) Might work for this problem seeing constraints but optimally we have to do this in one pass.
 
+        // for(int i=0;i<nums.length;i++){
+        //     for(int j=i+1;j<nums.length;j++){
+        //         if(nums[i] + nums[j] == target) return new int[]{i , j};
+        //     }
+        // }
+
+        // return new int[]{-1 , -1};
+
+        //OPTIMAL SOLUTION
+        HashMap<Integer , Integer> map = new HashMap<>();
         for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i] + nums[j] == target) return new int[]{i , j};
+            if(map.containsKey(nums[i])){
+                return new int[]{map.get(nums[i]) , i};
             }
+
+            map.put(target - nums[i] , i);
         }
 
         return new int[]{-1 , -1};
     }
 }
 
+//BRUTE FORCE
 //TC -->O(N^2)
 //SC -->O(1)
+
+//OPTIMAL SOLUTION 
+//TC --> O(N)
+//SC --> O(1)
