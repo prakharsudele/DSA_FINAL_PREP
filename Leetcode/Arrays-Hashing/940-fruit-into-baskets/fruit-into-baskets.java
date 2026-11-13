@@ -1,25 +1,30 @@
 class Solution {
-    public int totalFruit(int[] nums) {
+    public int totalFruit(int[] fruits) {
+        //Dynamic sliding window maintain hashmap and window and expand shrink acc to conditions also update maxl.
+        int i = 0;
         HashMap<Integer , Integer> map = new HashMap<>();
-        int i=0 , j = 0 , length = 0;
+        int maxl = 0;
 
-        while(j < nums.length){
-            map.put(nums[j] , map.getOrDefault(nums[j] , 0) + 1);
-            if(map.size() < 3){
-                length = Math.max(length , j-i+1);
-                j++;
-            }
-            else{
-                while(map.size() >= 3){
-                    map.put(nums[i] , map.get(nums[i]) - 1);
-                    if(map.get(nums[i]) == 0) map.remove(nums[i]);
-                    i++;
+        for(int j=0;j<fruits.length;j++){
+            map.put(fruits[j] , map.getOrDefault(fruits[j] , 0) + 1);
+
+            while(map.size() > 2){
+                int key = map.get(fruits[i]);
+                if(key > 1){
+                    map.put(fruits[i] , key-1);
+                }else{
+                    map.remove(fruits[i]);
                 }
-                length = Math.max(length , j-i+1);
-                j++;
+                i++;
             }
+
+            maxl =Math.max(maxl , j-i+1);
+
         }
 
-        return length;
+        return maxl;
     }
 }
+
+//TC --> O(N)
+//SC --> O(1)
